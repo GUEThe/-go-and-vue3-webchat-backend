@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/GUEThe/go-and-vue3-webchat-backend/pkg/chat"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"golang.org/x/net/websocket"
@@ -33,7 +34,7 @@ func handleMsg(ws *websocket.Conn, c echo.Context) {
 func wsHandler(c echo.Context) error {
 	// userWsMap := make(map[string]*websocket.Conn)
 	websocket.Handler(func(ws *websocket.Conn) {
-		// client := chat.Client{}
+		client := chat.Client{}
 	}).ServeHTTP(c.Response(), c.Request())
 	return nil
 }
